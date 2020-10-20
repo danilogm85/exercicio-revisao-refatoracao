@@ -3,25 +3,21 @@
 
 #include <iostream>
 #include <string>
+const int MAX_HORAS = 8;
 
 class Empregado {
 	
   public:
+    double pagamentoMes(double horasTrabalhadas);
+
+    void set_nome(std::string _nome) {nome = _nome;}
+    void set_salarioHora(double _salarioHora) {salarioHora = _salarioHora;}
+    std::string get_nome() {return nome;}
+    double get_salarioHora() {return salarioHora;}
+
+  protected:
     double salarioHora;  
-    double quotaMensalVendas;  
-
-
-    double pagamentoMes(double horasTrabalhadas) {
- 
-      double t = horasTrabalhadas;
-	  
-	  //Cálculo de hora extra (+50% se horasTrabalhadas > 8)
-      if (horasTrabalhadas > 8) {
-        double x = horasTrabalhadas - 8;
-        t += x / 2;
-      }
-	  return t * salarioHora;
-    }
+    std::string nome;
 	
 };
 

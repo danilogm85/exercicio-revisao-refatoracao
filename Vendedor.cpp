@@ -1,14 +1,14 @@
-#include <string>
-#include "Empregado.hpp"
+#include "Vendedor.hpp"
 
-class Vendedor : public Empregado {
+Vendedor::Vendedor(std::string _nome, double _salarioHora, int _quotaMensalVendas){
+  set_nome(_nome);
+  set_salarioHora(_salarioHora);
+  set_quotaMensalVendas(_quotaMensalVendas);
+}
 
-  public:
-    std::string nome;  	  
-	
-	double quotaTotalAnual() {
-	  return quotaMensalVendas * 12;
-	}
-	
-};
-
+void Vendedor::print_all_info(double horasTrabalhadas) {
+  std::cout << "Nome: " << get_nome() << std::endl;
+  std::cout << "Salario Mes: " << pagamentoMes(horasTrabalhadas) << std::endl;  
+  std::cout << "Quota vendas: " << quotaTotalAnual() << std::endl;
+  std::cout << std::endl;
+}
